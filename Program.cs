@@ -62,7 +62,7 @@ namespace vectorSegDos
 
 
 
-            Console.WriteLine("\nMenu de opciones: \n1-Ver promedio\n2-Ver pares\n3-Ver impares\n4-Ver num mayor\n5-Ver num menor\n6-Eliminar un elemento del vector\n7-Buscar un elemento del vector");
+            Console.WriteLine("\nMenu de opciones: \n1-Ver promedio\n2-Ver cantidad pares\n3-Ver cantidad impares\n4-Ver num mayor\n5-Ver num menor\n6-Eliminar un elemento del vector\n7-Buscar un elemento del vector");
             do
             {
                 Console.WriteLine("-----------------");
@@ -161,7 +161,11 @@ namespace vectorSegDos
 
         static void mayor(double[] vector)
         {
-            double mayor = -99999999;
+
+
+
+
+            double mayor = -999999999999;
             
             
             for(int i = 0; i < vector.Length; i++){
@@ -179,7 +183,7 @@ namespace vectorSegDos
 
         static void menor(double[] vector)
         {
-            double menor = 9999999999;
+            double menor = 999999999999;
 
             for (int i = 0; i < vector.Length; i++) {
                 if (vector[i] < menor)
