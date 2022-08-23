@@ -19,11 +19,11 @@ namespace vectorSegDos
             bool ok = false;
             int contador = 0;
 
-            Console.WriteLine("Creando vector...");
+            Console.WriteLine("Creando vector de 20 posiciones...");
 
             do
             {
-                Console.WriteLine("Ingrese n: ");
+                Console.WriteLine("Ingrese un numero (posicion actual " + (contador) + "): \t\t\tDespues de ingresar el numero presione enter");
                 dato = Console.ReadLine();
 
                 if (double.TryParse(dato, out n)) {
@@ -65,10 +65,10 @@ namespace vectorSegDos
             Console.WriteLine("\nMenu de opciones: \n1-Ver promedio\n2-Ver cantidad pares\n3-Ver cantidad impares\n4-Ver num mayor\n5-Ver num menor\n6-Eliminar un elemento del vector\n7-Buscar un elemento del vector");
             do
             {
-                Console.WriteLine("-----------------");
-                Console.WriteLine("Ingrese op (1 al 7): ");
+                Console.WriteLine("-------------------------------------------------------------");
+                Console.WriteLine("Ingrese el numero de la opcion a la cual desea ir (1 al 7): ");
 
-                Console.WriteLine("-----------------");
+                Console.WriteLine("-------------------------------------------------------------");
                 dato = Console.ReadLine();
 
                 if (int.TryParse(dato, out op))
@@ -122,7 +122,7 @@ namespace vectorSegDos
                 prom += vector[i];
             }
             prom /= vector.Length;
-            Console.WriteLine("Promedio: " + prom);
+            Console.WriteLine("El promedio es: " + prom);
             continuar();
         }
 
@@ -135,7 +135,7 @@ namespace vectorSegDos
                     cantidad += 1;
                 }
             }
-            Console.WriteLine("Cantidad pares: " + cantidad);
+            Console.WriteLine("La cantidad de numeros pares es: " + cantidad);
 
             continuar();
         }
@@ -152,7 +152,7 @@ namespace vectorSegDos
                 }
             }
 
-            Console.WriteLine("Cantidad impares: " + cantidad);
+            Console.WriteLine("La cantidad de numeros impares es: " + cantidad);
             
             continuar();
             
@@ -175,7 +175,7 @@ namespace vectorSegDos
                 }   
             }
 
-            Console.WriteLine("Mayor: " + mayor);
+            Console.WriteLine("El numero mayor ingresado es: " + mayor);
 
             continuar();
         }
@@ -193,7 +193,7 @@ namespace vectorSegDos
                 }
             }
 
-            Console.WriteLine("Menor: " + menor);
+            Console.WriteLine("El numero menor ingresado es: " + menor);
 
             continuar();
         }
@@ -229,8 +229,10 @@ namespace vectorSegDos
             Console.WriteLine("\nLa posicion a eliminar ha sido de manera aleatoria, la pos eliminada fue: " + j);
             Console.WriteLine("\nNumero eliminado: " + nD + "\tEn posicion: " + j + "\n");
 
-            //comentar xd
-            for (int i = 0; i < vector.Length; i++)
+            //pa mi yo del futuro, comentar esto xd
+            //yo(04:01PM-23/08/22) - mejor no :v
+            Console.WriteLine("El vector quedó: ");
+            for (int i = 0; i < vector.Length - 1; i++)
             {
                 Console.Write(vector[i] + "  ");
             }
@@ -264,7 +266,7 @@ namespace vectorSegDos
                 }
                 else
                 {
-                    Console.WriteLine("Error, dato no valido");
+                    Console.WriteLine("Error, tipo de dato no valido (es diferente a un numero)");
                 }
 
 
@@ -276,7 +278,7 @@ namespace vectorSegDos
                 }
                 else
                 {
-                    Console.WriteLine("Dato no encontrado D:");
+                    Console.WriteLine("Numero no encontrado D:");
                 }
 
             } while ((!(double.TryParse(dato, out datoABuscar))) || (encontrado == false));
